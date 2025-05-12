@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="include/AdminLTE-2.3.0/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="include/AdminLTE-2.3.0/dist/css/AdminLTE.css">
+  <link rel="stylesheet" href="include/AdminLTE-2.3.0/dist/css/skins/skin-black.css">
+  <style type="text/css">
+    html,
+    body {
+      maring: 0;
+      padding: 0;
+      font-family: tahoma, "Microsoft Sans Serif", sans-serif, Verdana;
+      font-size: 12px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="include/jquery.redirect.js"> </script>
+  <script>
+    $(document).ready(function() {
+      $('#myModal').modal('show');
+
+      //$('#myModal').modal('hide');
+      $("#search").click(function() {
+        var code = document.getElementById("code").value;
+        var pcode = code.substring(2, 4);
+        var type = "1";
+        var iden = "820495";
+        switch (pcode) {
+          case "50":
+          case "51":
+          case "52":
+          case "54":
+          case "55":
+          case "56":
+          case "57":
+          case "58":
+            link = "http://do1.spa.hss.moph.go.th:1081/qroutput.php?do=1&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "53":
+          case "63":
+          case "64":
+          case "65":
+          case "67":
+            link = "http://do2.spa.hss.moph.go.th:1081/qroutput.php?do=2&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "18":
+          case "60":
+          case "61":
+          case "62":
+          case "66":
+            link = "http://do3.spa.hss.moph.go.th:1081/qroutput.php?do=3&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "12":
+          case "13":
+          case "14":
+          case "15":
+          case "16":
+          case "17":
+          case "19":
+          case "26":
+            link = "http://do4.spa.hss.moph.go.th:1081/qroutput.php?do=4&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "70":
+          case "71":
+          case "72":
+          case "73":
+          case "74":
+          case "75":
+          case "76":
+          case "77":
+            link = "http://do5.spa.hss.moph.go.th:1081/qroutput.php?do=5&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "20":
+          case "21":
+          case "22":
+          case "23":
+          case "24":
+          case "25":
+          case "27":
+            link = "http://do6.spa.hss.moph.go.th:1081/qroutput.php?do=6&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "40":
+          case "44":
+          case "45":
+          case "46":
+            link = "http://do7.spa.hss.moph.go.th:1081/qroutput.php?do=7&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "39":
+          case "41":
+          case "42":
+          case "43":
+          case "47":
+          case "48":
+          case "38":
+            link = "http://do8.spa.hss.moph.go.th:1081/qroutput.php?do=8&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "30":
+          case "31":
+          case "32":
+          case "36":
+            link = "http://do9.spa.hss.moph.go.th:1081/qroutput.php?do=9&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "33":
+          case "34":
+          case "35":
+          case "37":
+          case "49":
+            link = "http://spa.hss.moph.go.th/qroutput.php?do=10&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "80":
+          case "81":
+          case "82":
+          case "83":
+          case "84":
+          case "85":
+          case "86":
+            link = "http://do11.spa.hss.moph.go.th:1081/qroutput.php?do=11&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "90":
+          case "91":
+          case "92":
+          case "93":
+          case "94":
+          case "95":
+          case "96":
+            link = "http://do12.spa.hss.moph.go.th:1081/qroutput.php?do=12&type=" + type + "&w=" + iden + "&t=1";
+            break;
+          case "10":
+            link = "http://spa.hss.moph.go.th/qroutput.php?type=" + type + "&w=" + iden + "&t=1";
+            break;
+          default:
+            alert("เลขที่ใบอนุญาตผิดพลาด");
+            var error = 1;
+            break;
+        }
+        //$.redirect(link,{ datas:iden },'POST');
+        if (error != 1) {
+          window.location.href = link;
+        }
+
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  
+  <div class="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container" align="center" style="font-size: 20px;padding-top: 10px;">
+                  ข้อมูลผู้ให้บริการที่ผ่านการรับรอง
+              </div>
+    </nav>
+    <section class="content" style="padding-top: 90px;">
+                      <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">
+              <font color="#32004a">ข้อมูลส่วนตัว</font>
+            </h3>
+          </div>
+          <div class="box-body">
+            <dl class="dl-horizontal">
+              <dt style="width: 150px;">เลขที่ใบรับรองผู้ให้บริการ</dt>
+              <dd style="margin-left: 180px;">100008381-66</dd>
+              <dt style="width: 150px;">ชื่อผู้ให้บริการ</dt>
+              <dd style="margin-left: 180px;">วสิษฐ์ชวิน ปลั่งศิริ</dd>
+              <dt style="width: 150px;">ชื่อผู้ให้บริการ(en)</dt>
+              <dd style="margin-left: 180px;">Wasitchavin Plangsiri</dd>
+              <!-- <dt style="width: 150px;">ที่อยู่</dt>
+              <dd style="margin-left: 180px;">บ้านเลขที่ 113/36 หมู่ที่ 7 ตำบลกะทู้  อำเภอกะทู้ จังหวัดภูเก็ต</dd>
+              <dt style="width: 150px;">โทรศัพท์</dt>
+              <dd style="margin-left: 180px;">0942928793</dd>
+              <dt style="width: 150px;">อีเมล์</dt>
+              <dd style="margin-left: 180px;"></dd> -->
+            </dl>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-header with-border">
+            <h3 class="box-title">
+              <font color="#32004a">ข้อมูลหลักสูตรที่ได้รับการรับรอง</font>
+            </h3>
+          </div>
+                              <div class="box-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ลำดับ</th>
+                  <th>หลักสูตร</th>
+                  <th>หน่วยงาน/โรงเรียน</th>
+                  <!-- <th>วันที่ประกาศ</th> -->
+                </tr>
+              </thead>
+              <tbody>
+                                    <tr>
+                      <td>1</td>
+                      <td>หลักสูตรนวดไทยเพื่อสุขภาพ 150 ชั่วโมง</td>
+                      <td>สอนนวดแผนไทยและการประคบสมุนไพรดอยน้ำซับ</td>
+                    </tr>
+                                  </tbody>
+            </table>
+          </div>
+        </div>
+          </section>
+  </div>
+  <script src="include/bootstrap/js/jquery-1.11.0.min.js"></script>
+  <!-- Bootstrap 3.3.5 -->
+  <script src="include/AdminLTE-2.3.0/bootstrap/js/bootstrap.min.js"></script>
+  <script src="include/AdminLTE-2.3.0/dist/js/app.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="include/AdminLTE-2.3.0/dist/js/demo.js"></script>
+</body>
+
+</html>
